@@ -14,7 +14,7 @@ export default function ShapeDetail({ shape, onClose, onApply }) {
 
   return (
     <div style={{ position: "fixed", inset: 0, zIndex: 100, background: "rgba(8,8,7,0.95)", backdropFilter: "blur(40px)", display: "flex", flexDirection: "column", alignItems: "center", overflowY: "auto", animation: "fadeIn 0.3s ease-out" }}>
-      <button onClick={onClose} style={{ position: "fixed", top: 20, right: 24, background: "rgba(255,255,255,0.04)", border: "none", color: "rgba(255,255,255,0.35)", fontSize: 12, cursor: "pointer", fontFamily: F, padding: "6px 14px", borderRadius: 6, zIndex: 10 }}>ESC</button>
+      <button onClick={onClose} style={{ position: "fixed", top: 20, left: "50%", transform: "translateX(-50%)", background: "rgba(255,255,255,0.04)", border: "none", color: "rgba(255,255,255,0.35)", fontSize: 11, cursor: "pointer", fontFamily: F, padding: "6px 14px", borderRadius: 6, zIndex: 10 }}>press esc to close</button>
       <div style={{ maxWidth: 620, width: "100%", padding: "64px 32px 100px" }}>
         <p style={{ fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: shape.color, opacity: 0.5, marginBottom: 24 }}>Shape</p>
         <h2 style={{ fontFamily: FS, fontSize: 38, fontWeight: 400, margin: "0 0 8px", color: "#e8e4df", lineHeight: 1.15 }}>{shape.name}</h2>
@@ -31,22 +31,6 @@ export default function ShapeDetail({ shape, onClose, onApply }) {
         </div>
 
         <RadarChart ratings={shape.r} category={tab} color={shape.color} size={270} animate={false} />
-
-        <div style={{ marginTop: 16 }}>
-          {C[tab].items.map((item, i) => {
-            const val = shape.r[tab]?.[i] ?? 0;
-            return (
-              <div key={i} style={{ display: "flex", alignItems: "center", gap: 12, padding: "8px 0", borderBottom: i < C[tab].items.length - 1 ? "1px solid rgba(255,255,255,0.025)" : "none" }}>
-                <span style={{ fontSize: 12, color: "rgba(255,255,255,0.45)", flex: 1, fontWeight: 300 }}>{item.name}</span>
-                <div style={{ display: "flex", gap: 2 }}>
-                  {[1, 2, 3, 4, 5].map(v => (
-                    <div key={v} style={{ width: 12, height: 12, borderRadius: 3, background: v <= val ? `${shape.color}30` : "rgba(255,255,255,0.025)", border: `1px solid ${v <= val ? shape.color + "35" : "rgba(255,255,255,0.05)"}` }} />
-                  ))}
-                </div>
-              </div>
-            );
-          })}
-        </div>
 
         {/* AI ADAPTATION SECTION */}
         <div style={{ marginTop: 36, borderTop: "1px solid rgba(255,255,255,0.04)", paddingTop: 28 }}>

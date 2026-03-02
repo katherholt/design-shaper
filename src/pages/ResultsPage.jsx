@@ -48,14 +48,11 @@ export default function ResultsPage({ ratings, goMap }) {
             <h1 style={{ fontFamily: FS, fontSize: 44, fontWeight: 400, lineHeight: 1.1, margin: "0 0 12px", color: "#e8e4df" }}>Your shape</h1>
             <p style={{ fontSize: 14, color: "rgba(255,255,255,0.25)", fontWeight: 300 }}>{rated}/{total} mapped &middot; {avg.toFixed(1)} avg</p>
           </div>
-          <button onClick={handleShare} disabled={generating} style={{
-            padding: "9px 20px", borderRadius: 8, fontSize: 12, cursor: "pointer", fontFamily: F, fontWeight: 400,
-            background: "rgba(212,165,116,0.08)", border: "1px solid rgba(212,165,116,0.15)", color: "#D4A574", transition: "all 0.2s",
-            opacity: generating ? 0.5 : 1,
-          }}
-            onMouseEnter={e => { e.target.style.background = "rgba(212,165,116,0.14)"; }}
-            onMouseLeave={e => { e.target.style.background = "rgba(212,165,116,0.08)"; }}
-          >{generating ? "Generating..." : "Share my shape"}</button>
+          <button disabled style={{
+            padding: "9px 20px", borderRadius: 8, fontSize: 12, cursor: "default", fontFamily: F, fontWeight: 400,
+            background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)", color: "rgba(255,255,255,0.25)", transition: "all 0.2s",
+            opacity: 0.6,
+          }}>Share (coming soon)</button>
         </div>
       </div>
 
