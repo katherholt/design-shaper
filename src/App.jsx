@@ -36,7 +36,7 @@ export default function App() {
       {quiz && <Quiz catKey={quiz} ratings={ratings} onRate={rate} onClose={() => setQuiz(null)} />}
       {shape !== null && <ShapeDetail shape={SHAPES[shape]} onClose={() => setShape(null)} onApply={apply} />}
       <Nav page={page} setPage={setPage} rated={rated} total={total} />
-      {page === "shapes" && <ShapesPage onOpen={setShape} />}
+      {page === "shapes" && <ShapesPage onOpen={setShape} onQuiz={() => setPage("map")} />}
       {page === "map" && <MapPage ratings={ratings} onQuiz={setQuiz} />}
       {page === "results" && <ResultsPage ratings={ratings} goMap={() => setPage("map")} />}
       {page === "ai" && <AIPage />}

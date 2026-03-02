@@ -34,7 +34,7 @@ export default function Quiz({ catKey, ratings, onRate, onClose }) {
 
   return (
     <div style={{ position: "fixed", inset: 0, zIndex: 100, background: "rgba(8,8,7,0.93)", backdropFilter: "blur(40px)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", animation: "fadeIn 0.25s ease-out" }}>
-      <button onClick={onClose} style={{ position: "absolute", top: 20, right: 24, background: "rgba(255,255,255,0.04)", border: "none", color: "rgba(255,255,255,0.35)", fontSize: 12, cursor: "pointer", fontFamily: F, padding: "6px 14px", borderRadius: 6 }}>ESC</button>
+      <button onClick={onClose} style={{ position: "absolute", top: 20, left: "50%", transform: "translateX(-50%)", background: "rgba(255,255,255,0.04)", border: "none", color: "rgba(255,255,255,0.35)", fontSize: 11, cursor: "pointer", fontFamily: F, padding: "6px 14px", borderRadius: 6 }}>press esc to close</button>
       <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 2, background: "rgba(255,255,255,0.03)" }}>
         <div style={{ height: "100%", background: cat.grad, width: `${((idx + 1) / total) * 100}%`, transition: "width 0.4s cubic-bezier(0.16,1,0.3,1)", boxShadow: `0 0 16px ${cat.accent}30` }} />
       </div>

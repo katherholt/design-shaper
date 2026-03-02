@@ -42,7 +42,7 @@ export default function ShareModal({ imageUrl, onClose }) {
 
   return (
     <div style={{ position: "fixed", inset: 0, zIndex: 100, background: "rgba(8,8,7,0.95)", backdropFilter: "blur(40px)", display: "flex", alignItems: "center", justifyContent: "center", animation: "fadeIn 0.25s ease-out", padding: 24 }}>
-      <button onClick={onClose} style={{ position: "fixed", top: 20, right: 24, background: "rgba(255,255,255,0.04)", border: "none", color: "rgba(255,255,255,0.35)", fontSize: 12, cursor: "pointer", fontFamily: F, padding: "6px 14px", borderRadius: 6, zIndex: 10 }}>ESC</button>
+      <button onClick={onClose} style={{ position: "fixed", top: 20, left: "50%", transform: "translateX(-50%)", background: "rgba(255,255,255,0.04)", border: "none", color: "rgba(255,255,255,0.35)", fontSize: 11, cursor: "pointer", fontFamily: F, padding: "6px 14px", borderRadius: 6, zIndex: 10 }}>press esc to close</button>
       <div style={{ maxWidth: 440, width: "100%", textAlign: "center" }}>
         <p style={{ fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.2)", marginBottom: 20 }}>Share your shape</p>
         <div style={{ borderRadius: 12, overflow: "hidden", border: "1px solid rgba(255,255,255,0.06)", marginBottom: 28, background: "rgba(255,255,255,0.02)" }}>
